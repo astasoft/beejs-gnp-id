@@ -7,11 +7,11 @@ yang lebih nyaman dilihat.
 
 Teks asli dapat anda lihat pada tautan berikut: http://beej.us/guide/bgnet/
 Judul: Beej's Guide to Network Programming
-Penulis: Brian "Beej Jorgensen" Hall &lt;beej@beej.us&gt;
+Penulis: Brian "Beej Jorgensen" Hall \<beej@beej.us\>
 
 # Penerjemah
 
-Rio Astamal <me@rioastamal.net>
+Rio Astamal \<me@rioastamal.net\>
 
 # Kontribusi
 
