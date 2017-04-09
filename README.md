@@ -6,8 +6,10 @@ dapat menggunakan aplikasi lain untuk menampilkan text ini dalam bentuk
 yang lebih nyaman dilihat.
 
 Teks asli dapat anda lihat pada tautan berikut: http://beej.us/guide/bgnet/
-Judul: Beej's Guide to Network Programming
-Penulis: Brian "Beej Jorgensen" Hall \<beej@beej.us\>
+
+Judul Asli | Penulis
+-----------|--------
+Beej's Guide to Network Programming | Brian "Beej Jorgensen" Hall \<beej@beej.us\>
 
 # Penerjemah
 
