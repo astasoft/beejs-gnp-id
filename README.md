@@ -5,8 +5,9 @@ Bahasa Indonesia. Terjemahan ini disediakan dalam format _markdown_. Anda
 dapat menggunakan aplikasi lain untuk menampilkan text ini dalam bentuk
 yang lebih nyaman dilihat.
 
-Teks asli dapat anda lihat pada tautan berikut:
-http://beej.us/guide/bgnet/
+Teks asli dapat anda lihat pada tautan berikut: http://beej.us/guide/bgnet/
+Judul: Beej's Guide to Network Programming
+Penulis: Brian "Beej Jorgensen" Hall &lt;beej@beej.us&gt;
 
 # Penerjemah
 
