@@ -2,9 +2,8 @@
 
 Hei! Pemrograman socket membuat kamu frustasi? Apakah topik ini memang sedikit
 susah dicari dari sebuah _man page_? Kamu ingin melakukan pemograman Internet
-yang keren, tapi kamu tidak ada waktu untuk menyelami sebuah `struct` demi
-ingin memahami jika kamu harus memanggil `bind()` dulu sebelum `connect()`,
-dll, dll.
+yang keren, tapi kamu tidak ada waktu untuk menyeberangi `struct` demi ingin 
+memahami jika kamu harus memanggil `bind()` dulu sebelum `connect()`, dll, dll.
 
 Jadi, coba tebak! Saya sudah pernah mengalami urusan buruk tersebut, dan saya
 setengah mati ingin membagikan informasi ini ke semua orang! Kamu datang ke
@@ -37,7 +36,7 @@ di bawah.
 
 ## 1.3. Laman Resmi and Buku untuk Dijual
 
-Laman official untuk dokumen ini adalah http://beej.us/guide/bgnet/. Disana
+Laman resmi untuk dokumen ini adalah http://beej.us/guide/bgnet/. Disana
 kamu juga akan menemukan contoh kode dan terjemahan untuk panduan ini dalam
 berbagai bahasa.
 
