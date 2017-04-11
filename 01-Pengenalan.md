@@ -43,3 +43,35 @@ berbagai bahasa.
 Untuk membeli salinan cetak (sebagian menyebutnya "buku"), kunjungi 
 http://beej.us/guide/url/bgbuy. Saya akan mengapresiasi pembelian tersebut
 karena membantu saya tetap dapat mempertahankan gaya hidup menulis saya.
+
+## 1.4. Catatan untuk Pemogram Solaris/SunOS
+
+Ketika mengkompilasi untuk Solaris atau SunOS, kamu perlu untuk memberikan
+beberapa perintah tambahan untuk menghubungkan pustaka yang tepat. Untuk 
+melakukan, cukup tambahkan `-lnsl -lscoket -lresolv` pada akhir perintah
+kompilasi, seperti berikut:
+
+```
+$ cc -o server server.c -lnsl -lsocket -lresolv
+```
+
+Jika kamu masih tetap mendapat kesalahan, kamu dapat mencoba lebih jauh dengan
+menambahkan sebuah `-lxnet` pada akhir baris perintah. Saya tidak tahu apa 
+artinya tambahan tersebut, tapi beberapa orang tampaknya membutuhkankan.
+
+Tempat lain yang kamu mungkin akan menukan masalah adalah dalam pemanggilan ke
+`setsockopt()`. Purwarupanya berbeda dengan yang ada pada mesin Linux saya, 
+jadi dibanding:
+
+```
+int yes=1;
+```
+
+Masukkan ini:
+
+```
+char yes='1';
+```
+
+Karena saya tidak memiliki mesin Sun, saya belum mencoba informasi di atas--
+itu hanya yang dikatakan orang kepada saya melalui email.
