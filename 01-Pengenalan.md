@@ -75,3 +75,27 @@ char yes='1';
 
 Karena saya tidak memiliki mesin Sun, saya belum mencoba informasi di atas--
 itu hanya yang dikatakan orang kepada saya melalui email.
+
+## 1.5. Catatan untuk Pemrogram Windows
+
+Pada titik ini, secara waktu, saya sudah menghabiskan cukup banyak waktu 
+bergulat di Windows, hanya saja saya tidak terlalu menyukainya. Tetapi saya
+harus adil dan mengatakan kepada kamu jika Windows memilih basis instalasi 
+yang sangat besar dan Windows merupakan sistem operasi yang cukup baik.
+
+Orang mengatakan ketika lama tidak bertemu maka hati jadi rindu, dan dalam
+hal ini, saya percaya itu benar. (Atau mungkin karena usia.) Tetapi apa yang
+dapat saya katakan adalah setelah lebih dari satu dekade tidak menggunakan
+sistem operasi dari Microsoft untuk pekerjaan pribadi saya, saya merasa sangat
+senang! Oleh karenanya, saya bisa duduk dengan santai dan bilang, "Tentu, 
+silahkan saja menggunakan Windows!"... Ya, itu membuat merapatkan gigi ketika
+mengatakan itu.
+
+Jadi saya tetep mendorong kamu untuk tetap mencoba [Linux](www.linux.com), 
+[BSD](www.bsd.org) atau varian Unix yang lain.
+
+Tapi orang menyukai apa yang mereka suka, dan kalian pengguna Windows akan 
+sangat senang mengetahui bahwa informasi ini secara umum dapat diterapkan
+kepada kalian, dengan sedikit perubahan, jika ada.
+
+TBC
