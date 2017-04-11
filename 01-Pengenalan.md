@@ -88,8 +88,8 @@ hal ini, saya percaya itu benar. (Atau mungkin karena usia.) Tetapi apa yang
 dapat saya katakan adalah setelah lebih dari satu dekade tidak menggunakan
 sistem operasi dari Microsoft untuk pekerjaan pribadi saya, saya merasa sangat
 senang! Oleh karenanya, saya bisa duduk dengan santai dan bilang, "Tentu, 
-silahkan saja menggunakan Windows!"... Ya, itu membuat merapatkan gigi ketika
-mengatakan itu.
+silahkan saja menggunakan Windows!"... Ya, itu membuat saya merapatkan gigi 
+ketika mengatakan itu.
 
 Jadi saya tetep mendorong kamu untuk tetap mencoba [Linux](www.linux.com), 
 [BSD](www.bsd.org) atau varian Unix yang lain.
