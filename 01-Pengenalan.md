@@ -57,7 +57,7 @@ $ cc -o server server.c -lnsl -lsocket -lresolv
 
 Jika kamu masih tetap mendapat kesalahan, kamu dapat mencoba lebih jauh dengan
 menambahkan sebuah `-lxnet` pada akhir baris perintah. Saya tidak tahu apa 
-artinya tambahan tersebut, tapi beberapa orang tampaknya membutuhkankan.
+artinya tambahan tersebut, tapi beberapa orang tampaknya membutuhkan.
 
 Tempat lain yang kamu mungkin akan menukan masalah adalah dalam pemanggilan ke
 `setsockopt()`. Purwarupanya berbeda dengan yang ada pada mesin Linux saya, 
