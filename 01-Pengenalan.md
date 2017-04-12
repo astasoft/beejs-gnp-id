@@ -169,3 +169,37 @@ perlu argumen, dan `CreateProcess()` memerlukan sekitar 48 milyar argumen.
 Jika kamu tidak suka itu, `CreateThread()` lebih mudah untuk digunakan...tapi
 sayangnya diskusi tentang _multithreading_ diluar cakupan dokumen ini. Saya
 hanya bicara sampai disitu, kamu tahukan!
+
+## 1.6. Kebijakan Email
+
+Secara umum saya bersedia membantu menjawab pertanyaan-pertanyaan lewat email
+jadi jangan ragu untuk bertanya, tapi saya tidak menjamin akan membalas. Saya
+memiliki kegiatan yang padat dan terkadang saya tidak memiliki waktu untuk
+pertanyaan yang kamu kirim. Ketika itu terjadi, saya biasanya menghapus pesan
+tersebut. Jangan diambil hati; Saya pasti tidak memiliki waktu untuk memberikan
+jawaban secara detail seperti yang kamu butuhkan.
+
+Sebagai aturan, semakin rumit pertanyaan, maka semakin kecil peluangnya untuk
+saya respon. Jika kamu bisa memperinci pertanyaanmu sebelum mengirimkannya dan
+pastikan untuk menyertakan semua informasi terkait (seperti _platform_, 
+_compiler_, pesan error yang didapat, dan lainnya yang kamu pikir dapat 
+membantu saya untuk memecahkan masalahnya), maka kamu lebih berkesempatan 
+untuk mendapat respon. Untuk petunjuk lainnya, silahkan baca dokumen ESR,
+[Bagaimana Bertanya dengan Cara yang Pintar](http://www.catb.org/~esr/faqs/smart-questions.html).
+
+Jika kamu tidak mendapat respon, teliti lebih dalam lagi, untuk menemukan
+jawabannya, dan jika masih sulit dipahami, maka kirimkan lagi ke saya dengan
+informasi yang baru saja kamu temukan dan semoga itu cukup untuk dapat
+membuat saya membantu kamu.
+
+Sekarang saya sudah mendesak kepada kamu tentang bagaimana cara menulis dan
+bagaimana cara untuk tidak menulis ke saya, saya hanya ingin kamu tahu bahwa
+saya _sangat_ menghargai semua pujian untuk panduan ini yang saya dapat selama
+beberapa tahun. Itu benar-benar mengangkat moral saya, dan menyenangkan bagi
+saya ketika mendengar bahwa itu digunakan untuk tujuan yang baik Terima Kasih!
+
+## 1.7. Duplikasi
+
+Kamu diperbolehkan untuk menduplikasi situs ini, apakah secara publik atau
+secara privat. Jika kamu menduplikasi situs ini dan menginginkan saya untuk
+menaruh tautan pada halaman utama, kirim saja informasinya ke beej@beej.us.
