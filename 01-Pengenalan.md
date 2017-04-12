@@ -98,4 +98,74 @@ Tapi orang menyukai apa yang mereka suka, dan kalian pengguna Windows akan
 sangat senang mengetahui bahwa informasi ini secara umum dapat diterapkan
 kepada kalian, dengan sedikit perubahan, jika ada.
 
-TBC
+Satu hal keren yang bisa kamu lakukan adalah menginstal 
+[Cygwin](http://www.cygwin.com/), yang merupakan sebuah koleksi dari 
+perangkat-perangkat Unix untuk Windows. Saya pernah mendengar kabar jika
+menginstal Cygwin dapat membuat semua program ini dikompilasi tanpa
+modifikasi.
+
+Tapi beberapa dari kalian mungkin ingin melakukannya murni dengan Cara Windows.
+Kamu sangat berani kalau begitu, dan inilah yang harus kamu lakukan:
+keluar dan segara dapatkan Unix sekarang juga! Tidak, tidak--saya hanya 
+bercanda. Saya seharusnya menjadi ramah ke Windows sekarang...
+
+Ini yang harus kamu lakukan (kecual kamu menginstal 
+[Cygwin](http://www.cygwin.com/)!): pertama, abaikan sebagian besar _file_ 
+sistem _header_ yang saya sebutkan disini. Hal yang kamu perlukan adalah
+memasukkan:
+
+```
+#include <winsock.h>
+```
+
+Tunggu! kamu juga harus memanggil `WSAStartup()` sebelum melakukan apapun 
+dengan pustaka _socket_. Kode untuk melakukan itu akan terlihat seperti
+berikut:
+
+```
+#include <winsock.h>
+
+{
+    WSADATA wsaData;   // jika ini tidak bekerja
+    //WSAData wsaData; // coba yang ini
+
+    // MAKEWORD(1,1) for Winsock 1.1, MAKEWORD(2,0) for Winsock 2.0:
+
+    if (WSAStartup(MAKEWORD(1,1), &wsaData) != 0) {
+        fprintf(stderr, "WSAStartup failed.\n");
+        exit(1);
+    }
+```
+
+Kamu juga harus memberitahu _compiler_ kamu untuk menghubungkan ke pustaka 
+Winsock, biasanya bernama `wsock32.lib` atau `winsock32.lib,`, atau
+`ws2_32.lib` untuk Winsock 2.0. Pada VC++, ini bisa dilakukan melalui menu 
+`Project`, dibawah `Setting...` Klik tab `Link`, dan lihat pada kotak yang
+bertuliskan "Object/library modules". Tambahkan "wsock32.lib" (atau 
+apapun pustaka yang menjadi preferensimu) ke dalam daftar.
+
+Jadi saya mendengar.
+
+Akhirnya, kamu perlu memanggil `WSACleanup()` ketika selesai dengan pustaka
+socket. Lihat bantuan _online_ milik _compiler_mu untuk lebih lanjut.
+
+Ketika kamu sudah melakukan itu, sisa dari contoh-contoh yang ada di panduan
+ini secara umum dapat diterapkan, dengan sedikit pengecualian. Satu hal lagi,
+kamu tidak bisa menggunakan `close()` untuk menutup socket--kamu perlu untuk
+menggunakan `closesocket()`. Dan lagi, `select()` hanya dapat bekerja dengan 
+_socket descriptor_, bukan _file descriptor_ (seperti `0` untuk `stdin`).
+
+Terdapat juga sebuah kelas _socket_ yang dapat kamu gunakan, `CSocket`. Periksa
+halaman bantuan pengompilasi milikmu untuk informasi lebih lanjut.
+
+Untuk mendapatkan informasi tentang Winsock, baca 
+[Winsock FAQ](http://tangentsoft.net/wskfaq/) dan mulai dari sana.
+
+Terkahir, saya mendengar bahwa Windows tidak memiliki pemanggil sistem `fork()`
+yang merupakan, sayangnya, digunakan pada beberapa contoh saya. Mungkin kamu
+harus menghubungkan pada sebuah pustaka POSIX atau semacam itu untuk membuatnya
+dapat berjalan, atau kamu dapat menggunakan `CreateProcess()`. `fork()` tidak
+perlu argumen, dan `CreateProcess()` memerlukan sekitar 48 milyar argumen.
+Jika kamu tidak suka itu, `CreateThread()` lebih mudah untuk digunakan...tapi
+sayangnya diskusi tentang _multithreading_ diluar cakupan dokumen ini. Saya
+hanya bicara sampai disitu, kamu tahukan!
