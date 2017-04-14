@@ -36,8 +36,8 @@ singkatnya adalah, "Kamu bisa!", Jawaban panjangnya adalah, "Kamu bisa, tetapi
 data transmisi kamu."
 
 Apa selanjutnya? Bagaimana jika ini: ada berbagai macam jenis _socket_. Ada
-alamat Internet DARPA (Internet Sockets), nama _path_ pada sebuah lokasi lokal
-(Unix Sockets), alamat CCITT X.25 (X.25 Sockets yang bisa kamu abaikan), dan
+alamat Internet DARPA (Internet Socket), nama _path_ pada sebuah lokasi lokal
+(Unix Socket), alamat CCITT X.25 (X.25 Sockets yang bisa kamu abaikan), dan
 mungkin juga masih banyak lainnya tergantung jenis Unix yang kamu jalankan.
 Dokumen ini hanya membahas yang pertama: Internet Sockets.
 
@@ -49,9 +49,9 @@ akan membicarakan tentang dua jenis di sini. Kecuali untuk kalimat ini, dimana
 saya akan memberitahhukan kepada kamu bahwa "Raw Socket" juga sangat berguna
 dan kamu sebaiknya melihatnya.
 
-Baiklah. Apa dua jenis _socket_ tersebut? Satu adalah "Stream Sockets"; lainnya
-adalah "Datagram Sockets", yang setelah ini dirujuk sebagai "SOCK_STREAM" dan
-"SOCK_DGRAM". _Socket_ datagram kadang disebut sebagai "_socket_ yang tidak
+Baiklah. Apa dua jenis _socket_ tersebut? Satu adalah "Stream Socket"; lainnya
+adalah "Datagram Socket", yang setelah ini dirujuk sebagai "SOCK_STREAM" dan
+"SOCK_DGRAM". _Socket datagram_ kadang disebut sebagai "_socket_ yang tidak
 terkoneksi" (Baca: _connectionless_). (Tetapi mereka juga bisa
 di-`connect()`-kan jika kamu benar-benar mau. Lihat `connect()`, di bawah.)
 
@@ -81,7 +81,7 @@ dari "TCP/IP" dimana "IP" singkatan dari "Internet Protocol" (lihat
 dengan _routing_ Internet dan secara umum tidak bertanggung jawab untuk
 integritas data.
 
-Keren. Bagaimana tentang Datagram _socket_? Kenapa mereka disebut
+Keren. Bagaimana tentang _Datagram socket_? Kenapa mereka disebut
 _connectionless_? Apa yang menyebabkannya? Kenapa mereka tidak handal? Baiklah,
 ini adalah beberapa faktanya: jika kamu mengirim sebuah datagram, paketnya
 mungkin sampai. Paketnya mungkin sampai tidak berurutan. Jika sampai, data di
@@ -91,7 +91,7 @@ _Datagram socket_ juga menggunakan IP untuk _routing_, tapi mereka tidak
 menggunakan TCP; mereka menggunakan "User Datagram Protocol", atau "UDP" (lihat
 [RFC 768](http://tools.ietf.org/html/rfc768).)
 
-Kenapa mereka tidak terkoneksi (_connectionless_? Baiklah, secara sederhana,
+Kenapa mereka tidak terkoneksi (_connectionless_)? Baiklah, secara sederhana,
 itu karena kamu tidak perlu menjaga koneksi terbuka seperti yang kamu lakukan
 dengan _stream socket_. Kamu hanya perlu membuat sebuah paket, menambahkan
 sebuah _header_ IP didalamnya dengan informasi tujuan, dan mengirimkannya.
@@ -101,7 +101,7 @@ kiamat untuk alamat semesta. Contoh aplikasi: tftp (trivial file transfer
 protocol, saudara dekat dari FTP), dhcpd (sebuah klien DHCP), game multiplayer,
 audio _streaming_, konferensi video, dan lainnya.
 
-"Tunggu dulu! tftp dan dhcpd digunakan untuk mengirimkan binari aplikasi dari
+"Tunggu dulu! tftp dan dhcpd digunakan untuk mengirimkan biner aplikasi dari
 satu _host_ ke lainnya! Data tidak boleh hilang ketika sampai jika kamu berharap
 aplikasi untuk bekerja! Ilmu hitam macam apa ini?"
 
