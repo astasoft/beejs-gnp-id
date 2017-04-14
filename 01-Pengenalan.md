@@ -2,13 +2,13 @@
 
 Hei! Pemrograman _socket_ membuat kamu frustasi? Apakah topik ini memang sedikit
 susah dicari dari sebuah _man page_? Kamu ingin melakukan pemrograman Internet
-yang keren, tapi kamu tidak ada waktu untuk menyeberangi `struct` demi ingin 
+yang keren, tapi kamu tidak ada waktu untuk menyeberangi `struct` demi ingin
 memahami jika kamu harus memanggil `bind()` dulu sebelum `connect()`, dll, dll.
 
 Jadi, coba tebak! Saya sudah pernah mengalami urusan buruk tersebut, dan saya
 setengah mati ingin membagikan informasi ini ke semua orang! Kamu datang ke
 tempat yang tepat. Dokumen ini harusnya dapat memberikan panduan kepada
-programmer C yang berkemampuan rata-rata untuk dapat memulai langkah pada 
+programmer C yang berkemampuan rata-rata untuk dapat memulai langkah pada
 kegaduhan pemograman jaringan ini.
 
 Dan coba lihat: Akhirnya saya dapat mengejar ketertinggalan waktu
@@ -28,9 +28,9 @@ _man page_ menjadi mulai masuk akal... :-)
 ## 1.2. Platform dan Compiler
 
 Kode yang terdapat pada dokumen ini dikompilasi pada sebuah PC Linux
-menggunakan compiler GNU *gcc*. Tetapi harusnya, kode ini dapat dibangun 
-pada _platform_ apa saja yang menggunakan *gcc*. Secara alami, ini tidak 
-berlaku jika kamu memprogram di Windows--lihat 
+menggunakan compiler GNU *gcc*. Tetapi harusnya, kode ini dapat dibangun
+pada _platform_ apa saja yang menggunakan *gcc*. Namun secara umum, ini tidak
+berlaku jika kamu memprogram di Windows--lihat
 [bagian untuk untuk Pemograman Windows](#1-5-catatan-untuk-programmer-windows)
 di bawah.
 
@@ -40,15 +40,15 @@ Laman resmi untuk dokumen ini adalah http://beej.us/guide/bgnet/. Disana
 kamu juga akan menemukan contoh kode dan terjemahan untuk panduan ini dalam
 berbagai bahasa.
 
-Untuk membeli salinan cetak (sebagian menyebutnya "buku"), kunjungi 
+Untuk membeli salinan cetak (sebagian menyebutnya "buku"), kunjungi
 http://beej.us/guide/url/bgbuy. Saya akan mengapresiasi pembelian tersebut
 karena membantu saya tetap dapat mempertahankan gaya hidup menulis saya.
 
 ## 1.4. Catatan untuk Pemogram Solaris/SunOS
 
 Ketika mengkompilasi untuk Solaris atau SunOS, kamu perlu untuk memberikan
-beberapa perintah tambahan untuk menghubungkan pustaka yang tepat. Untuk 
-melakukan, cukup tambahkan `-lnsl -lscoket -lresolv` pada akhir perintah
+beberapa perintah tambahan untuk menghubungkan pustaka yang tepat. Untuk
+melakukannya, cukup tambahkan `-lnsl -lscoket -lresolv` pada akhir perintah
 kompilasi, seperti berikut:
 
 ```
@@ -56,11 +56,11 @@ $ cc -o server server.c -lnsl -lsocket -lresolv
 ```
 
 Jika kamu masih tetap mendapat kesalahan, kamu dapat mencoba lebih jauh dengan
-menambahkan sebuah `-lxnet` pada akhir baris perintah. Saya tidak tahu apa 
+menambahkan sebuah `-lxnet` pada akhir baris perintah. Saya tidak tahu apa
 artinya tambahan tersebut, tapi beberapa orang tampaknya membutuhkan.
 
-Tempat lain yang kamu mungkin akan menukan masalah adalah dalam pemanggilan ke
-`setsockopt()`. Purwarupanya berbeda dengan yang ada pada mesin Linux saya, 
+Tempat lain yang kamu mungkin akan menemukan masalah adalah dalam pemanggilan
+ke `setsockopt()`. Purwarupanya berbeda dengan yang ada pada mesin Linux saya,
 jadi dibanding:
 
 ```
@@ -78,39 +78,39 @@ itu hanya yang dikatakan orang kepada saya melalui email.
 
 ## 1.5. Catatan untuk Pemrogram Windows
 
-Pada titik ini, secara waktu, saya sudah menghabiskan cukup banyak waktu 
+Pada titik ini, secara waktu, saya sudah menghabiskan cukup banyak waktu
 bergulat di Windows, hanya saja saya tidak terlalu menyukainya. Tetapi saya
-harus adil dan mengatakan kepada kamu jika Windows memilih basis instalasi 
+harus adil dan mengatakan kepada kamu jika Windows memiliki basis instalasi
 yang sangat besar dan Windows merupakan sistem operasi yang cukup baik.
 
 Orang mengatakan ketika lama tidak bertemu maka hati jadi rindu, dan dalam
 hal ini, saya percaya itu benar. (Atau mungkin karena usia.) Tetapi apa yang
 dapat saya katakan adalah setelah lebih dari satu dekade tidak menggunakan
 sistem operasi dari Microsoft untuk pekerjaan pribadi saya, saya merasa sangat
-senang! Oleh karenanya, saya bisa duduk dengan santai dan bilang, "Tentu, 
-silahkan saja menggunakan Windows!"... Ya, itu membuat saya merapatkan gigi 
+senang! Oleh karenanya, saya bisa duduk dengan santai dan bilang, "Tentu,
+silahkan saja menggunakan Windows!"... Ya, itu membuat saya merapatkan gigi
 ketika mengatakan itu.
 
-Jadi saya tetep mendorong kamu untuk tetap mencoba [Linux](www.linux.com), 
+Jadi saya tetep mendorong kamu untuk tetap mencoba [Linux](www.linux.com),
 [BSD](www.bsd.org) atau varian Unix yang lain.
 
-Tapi orang menyukai apa yang mereka suka, dan kalian pengguna Windows akan 
+Tapi orang menyukai apa yang mereka suka, dan kalian pengguna Windows akan
 sangat senang mengetahui bahwa informasi ini secara umum dapat diterapkan
 kepada kalian, dengan sedikit perubahan, jika ada.
 
-Satu hal keren yang bisa kamu lakukan adalah menginstal 
-[Cygwin](http://www.cygwin.com/), yang merupakan sebuah koleksi dari 
+Satu hal keren yang bisa kamu lakukan adalah menginstal
+[Cygwin](http://www.cygwin.com/), yang merupakan sebuah koleksi dari
 perangkat-perangkat Unix untuk Windows. Saya pernah mendengar kabar jika
 menginstal Cygwin dapat membuat semua program ini dikompilasi tanpa
 modifikasi.
 
 Tapi beberapa dari kalian mungkin ingin melakukannya murni dengan Cara Windows.
 Kamu sangat berani kalau begitu, dan inilah yang harus kamu lakukan:
-keluar dan segara dapatkan Unix sekarang juga! Tidak, tidak--saya hanya 
+keluar dan segara dapatkan Unix sekarang juga! Tidak, tidak--saya hanya
 bercanda. Saya seharusnya menjadi ramah ke Windows sekarang...
 
-Ini yang harus kamu lakukan (kecual kamu menginstal 
-[Cygwin](http://www.cygwin.com/)!): pertama, abaikan sebagian besar _file_ 
+Ini yang harus kamu lakukan (kecuali kamu menginstal
+[Cygwin](http://www.cygwin.com/)!): pertama, abaikan sebagian besar _file_
 sistem _header_ yang saya sebutkan disini. Hal yang kamu perlukan adalah
 memasukkan:
 
@@ -118,7 +118,7 @@ memasukkan:
 #include <winsock.h>
 ```
 
-Tunggu! kamu juga harus memanggil `WSAStartup()` sebelum melakukan apapun 
+Tunggu! kamu juga harus memanggil `WSAStartup()` sebelum melakukan apapun
 dengan pustaka _socket_. Kode untuk melakukan itu akan terlihat seperti
 berikut:
 
@@ -137,28 +137,28 @@ berikut:
     }
 ```
 
-Kamu juga harus memberitahu _compiler_ kamu untuk menghubungkan ke pustaka 
+Kamu juga harus memberitahu _compiler_ kamu untuk menghubungkan ke pustaka
 Winsock, biasanya bernama `wsock32.lib` atau `winsock32.lib,`, atau
-`ws2_32.lib` untuk Winsock 2.0. Pada VC++, ini bisa dilakukan melalui menu 
+`ws2_32.lib` untuk Winsock 2.0. Pada VC++, ini bisa dilakukan melalui menu
 `Project`, dibawah `Setting...` Klik tab `Link`, dan lihat pada kotak yang
-bertuliskan "Object/library modules". Tambahkan "wsock32.lib" (atau 
+bertuliskan "Object/library modules". Tambahkan "wsock32.lib" (atau
 apapun pustaka yang menjadi preferensimu) ke dalam daftar.
 
-Jadi saya mendengar.
+Jadi saya mendengarkan.
 
 Akhirnya, kamu perlu memanggil `WSACleanup()` ketika selesai dengan pustaka
-socket. Lihat bantuan _online_ milik _compiler_mu untuk lebih lanjut.
+_socket_. Lihat bantuan _online_ milik _compiler_mu untuk lebih lanjut.
 
 Ketika kamu sudah melakukan itu, sisa dari contoh-contoh yang ada di panduan
 ini secara umum dapat diterapkan, dengan sedikit pengecualian. Satu hal lagi,
-kamu tidak bisa menggunakan `close()` untuk menutup socket--kamu perlu untuk
-menggunakan `closesocket()`. Dan lagi, `select()` hanya dapat bekerja dengan 
+kamu tidak bisa menggunakan `close()` untuk menutup _socket_--kamu perlu untuk
+menggunakan `closesocket()`. Dan lagi, `select()` hanya dapat bekerja dengan
 _socket descriptor_, bukan _file descriptor_ (seperti `0` untuk `stdin`).
 
 Terdapat juga sebuah kelas _socket_ yang dapat kamu gunakan, `CSocket`. Periksa
 halaman bantuan pengompilasi milikmu untuk informasi lebih lanjut.
 
-Untuk mendapatkan informasi tentang Winsock, baca 
+Untuk mendapatkan informasi tentang Winsock, baca
 [Winsock FAQ](http://tangentsoft.net/wskfaq/) dan mulai dari sana.
 
 Terkahir, saya mendengar bahwa Windows tidak memiliki pemanggil sistem `fork()`
@@ -181,9 +181,9 @@ jawaban secara detail seperti yang kamu butuhkan.
 
 Sebagai aturan, semakin rumit pertanyaan, maka semakin kecil peluangnya untuk
 saya respon. Jika kamu bisa memperinci pertanyaanmu sebelum mengirimkannya dan
-pastikan untuk menyertakan semua informasi terkait (seperti _platform_, 
-_compiler_, pesan error yang didapat, dan lainnya yang kamu pikir dapat 
-membantu saya untuk memecahkan masalahnya), maka kamu lebih berkesempatan 
+pastikan untuk menyertakan semua informasi terkait (seperti _platform_,
+_compiler_, pesan error yang didapat, dan lainnya yang kamu pikir dapat
+membantu saya untuk memecahkan masalahnya), maka kamu lebih berkesempatan
 untuk mendapat respon. Untuk petunjuk lainnya, silahkan baca dokumen ESR,
 [Bagaimana Bertanya dengan Cara yang Pintar](http://www.catb.org/~esr/faqs/smart-questions.html).
 
