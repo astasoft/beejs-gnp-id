@@ -203,3 +203,44 @@ saya ketika mendengar bahwa itu digunakan untuk tujuan yang baik Terima Kasih!
 Kamu diperbolehkan untuk menduplikasi situs ini, apakah secara publik atau
 secara privat. Jika kamu menduplikasi situs ini dan menginginkan saya untuk
 menaruh tautan pada halaman utama, kirim saja informasinya ke beej@beej.us.
+
+## 1.8. Catatan untuk Penerjemah
+
+Jika kamu ingin menerjemahkan panduan ini kedalam bahasa lain, tulis email ke
+saya di beej@beej.us dan saya akan memasukkan tautan ke hasil terjemahan kamu
+dari halaman utama. Kamu dipersilahkan untuk menambahkan nama kamu dan
+informasi kontak pada hasil terjemahan.
+
+Mohon untuk diperhatikan batasan-batasan lisensi pada bagian Hak Cipta dan
+Distribusi di bawah.
+
+Jika kamu ingin saya untuk menempatkan hasil terjemahan kamu, cukup tanya saja.
+Saya juga akan mentautkan ke tempat kamu jika kamu ingin memasang sendiri
+hasil terjemahannya; keduanya tidak masalah.
+
+## 1.9. Hak Cipta dan Distribusi
+
+Beej's Guide to Network Programming adalah Hak Cipta © 2015 dari Brian "Beej
+Jorgensen" Hall.
+
+Dengen pengecualian spesifik untuk sumber kode dan hasil terjemahan, di bawah,
+hasil kerja ini dilisensikan dibawah lisensi Creative Commons Attribution-
+Noncommercial- No Derivative Works 3.0. Untuk melihat salinan dari lisensi ini,
+kunjungi http://creativecommons.org/licenses/by-nc-nd/3.0/ atau kirim sebuah
+surat ke Creative Commons, 171 Second Street, Suite 300, San Fransisco,
+California, 94105, USA.
+
+Satu pengecualian khusus untuk lisensi bagian "No Derivative Works" (baca: Tidak
+boleh ada hasil karya turunan) adalah sebagai berikut: panduan ini boleh
+diterjemahkan kedalam berbagai bahasa, hasil terjemahan haruslah akurat, dan
+panduan ini dicetak seluruhnya dalam terjemahan tersebut. Lisensi yang sama
+diterapkan pada terjemahan seperti halnya panduan asli. Hasil terjemahan dapat
+memuat nama dan informai kontak dari penerjemah.
+
+Sumber kode untuk C pada dokumen ini ditujukan untuk publik, dan oleh karenanya
+bebas dari batasan-batasan lisensi.
+
+Para pendidik dapat secara bebas merekomendasikan atau memberikan salinan dari
+panduan ini untuk anak didik mereka.
+
+Hubungi beej@beej.us untuk informasi lebih lanjut.
