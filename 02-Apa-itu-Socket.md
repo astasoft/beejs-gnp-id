@@ -41,7 +41,7 @@ alamat Internet DARPA (Internet Sockets), nama _path_ pada sebuah lokasi lokal
 mungkin juga masih banyak lainnya tergantung jenis Unix yang kamu jalankan.
 Dokumen ini hanya membahas yang pertama: Internet Sockets.
 
-## 2.1. Dua Jenis dari Socket Internet
+## 2.1. Dua Jenis dari Internet Socket
 
 Apa ini? Ada dua jenis dari Internet Socket? Ya. Hmm, tidak. Saya bohong.
 Terdapat lebih banyak, tapi saya tidak ingin menakuti kalian. Saya hanya
@@ -59,16 +59,16 @@ _Stream Socket_ merupakan aliran komunikasi dua arah yang handal. Jika kamu
 mengeluarkan dua item dalam socket dengan urutan "1, 2", mereka akan tiba
 dengan urutan "1, 2" pada sisi penerima. Mereka juga akan bebas dari _error_.
 Saya sangat yakin, bahwa, mereka akan bebas dari _error_, tapi saya hanya
-akan meletakkan jari saya ditelinga ketika dan bernyanyi la la la la la jika
-ada orang yang mencoba mengklaim sebaliknya.
+akan meletakkan jari saya ditelinga dan bernyanyi la la la la la jika ada
+orang yang mencoba mengklaim sebaliknya.
 
 Apa yang menggunakan _stream socket_? Baiklah, kamu mungkin pernah mendengar
-aplikasi telnet, ya? Itu menggunakan _stream socket_. Semua karakter yang kamu
-ketikkan harus tiba dengan urutan yang sama ketika kamu mengetik, benar? Juga,
-_web browser_ menggunakan protokol HTTP dimana itu menggunakan _stream socket_
-untuk mendapatkan halaman. Bahkan, jika kamu _telnet_ pada sebuah website pada
-port 80, dan mengetikkan "GET / HTTP/1.0" dan menekan ENTER dua kali, itu akan
-mengeluarkan semua HTML kembali kepada kamu.
+aplikasi telnet, pernah? Itu menggunakan _stream socket_. Semua karakter yang
+kamu ketikkan harus tiba dengan urutan yang sama ketika kamu mengetik, benar?
+Juga, _web browser_ menggunakan protokol HTTP dimana itu menggunakan _stream
+socket_ untuk mendapatkan halaman. Bahkan, jika kamu _telnet_ pada sebuah
+website pada port 80, dan mengetikkan "GET / HTTP/1.0" dan menekan ENTER dua
+kali, itu akan mengeluarkan semua HTML kembali kepada kamu.
 
 Bagaimana _stream socket_ dapat mencapai kualitas data transisi yang begitu
 tinggi? Mereka menggunakan sebuah protokol yang disebut "The Transmission
@@ -83,7 +83,7 @@ integritas data.
 
 Keren. Bagaimana tentang Datagram _socket_? Kenapa mereka disebut
 _connectionless_? Apa yang menyebabkannya? Kenapa mereka tidak handal? Baiklah,
-ini dalah beberapa faktanya: jika kamu mengirim sebuah datagram, paketnya
+ini adalah beberapa faktanya: jika kamu mengirim sebuah datagram, paketnya
 mungkin sampai. Paketnya mungkin sampai tidak berurutan. Jika sampai, data di
 dalam paket akan bebas dari _error_.
 
@@ -108,18 +108,18 @@ aplikasi untuk bekerja! Ilmu hitam macam apa ini?"
 Baiklah, teman manusiaku, tftp dan program sejenis memiliki protokol mereka
 sendiri di atas UDP. Sebagai contoh, protokol tftp mengatakan untuk setiap
 paket yang dikirim, penerima harus mengirim balik sebuah paket yang mengatakan,
-"Say menerimanya!" (sebuah paket "ACK".) Jika pengirim dari paket asli tidak
+"Saya menerimanya!" (sebuah paket "ACK".) Jika pengirim dari paket asli tidak
 mendapat balasan, katakanlah, lima detik, dia akan memgirim ulang paketnya
 sampai dia mendapat balasan ACK. Prosedur pemberitahuan ini sangat peting
 ketika mengimplementasikan aplikasi SOCK_DGRAM yang handal.
 
-Untuk aplikasi yang tidak memerlukan kehandalan seperti game, audiom atau
+Untuk aplikasi yang tidak memerlukan kehandalan seperti game, audio atau
 video, kamu dapat mengabaikan paket-paket yang hilang, atau mungkin mencoba
 untuk mengkompensasikannya. (Pemain Quake akan mengetahui manifestasi efek
 ini dengan istilah teknis: _lag_ terkutuk). Kata "terkutuk", dalam hal ini,
 mewakili semua kata-kata kotor yang terucap.)
 
-Kenapa kamu menggunakan protokkol yang tidak handal? Dua alasan: kecepatan dan
+Kenapa kamu menggunakan protokol yang tidak handal? Dua alasan: kecepatan dan
 kecepatan. Lebih sangat cepat untuk kirim-dan-lupakan daripada harus mengawasi
 apakah paket datang dengan aman dan memastikan bahwa paketnya berurutan dan
 sebagainya. Jika kamu mengirimkan sebuah pesan _chat_, TCP sangat bagus; jika
